@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anna Gabriela Monteiro | Desenvolvedora Full Stack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Hanken+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(109, 40, 217, 0.05) 0%, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#7331df",
+                        "on-tertiary-fixed-variant": "#46464f",
+                        "on-secondary-container": "#3f1e8c",
+                        "tertiary": "#3f4049",
+                        "secondary-container": "#ab8ffe",
+                        "on-secondary-fixed": "#21005e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed": "#e8ddff",
+                        "primary": "#5300b7",
+                        "outline": "#7b7486",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#cebdff",
+                        "tertiary-fixed": "#e3e1ed",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e6eeff",
+                        "primary-fixed-dim": "#d3bbff",
+                        "on-surface": "#121c2a",
+                        "on-surface-variant": "#4a4455",
+                        "on-secondary-fixed-variant": "#4f319c",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#250059",
+                        "secondary": "#674bb5",
+                        "surface-dim": "#d0dbed",
+                        "inverse-surface": "#27313f",
+                        "tertiary-fixed-dim": "#c7c5d1",
+                        "primary-fixed": "#ebddff",
+                        "primary-container": "#6d28d9",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#ccc3d7",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-primary-fixed-variant": "#5b00c5",
+                        "on-tertiary-container": "#cfcdd9",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d9e3f6",
+                        "surface-container-high": "#dee9fc",
+                        "on-tertiary-fixed": "#1a1b23",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#d3bbff",
+                        "tertiary-container": "#575761",
+                        "surface": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#121c2a",
+                        "on-primary-container": "#dac5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "md": "1.5rem",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "sm": "1rem",
+                        "xs": "0.5rem",
+                        "lg": "2rem",
+                        "xl": "4rem",
+                        "section": "8rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "display-mobile": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<header class="w-full sticky top-0 bg-background/80 backdrop-blur-md z-50 border-b border-outline-variant">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-lg h-16">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">AnnaGabriela</span>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors duration-200 cursor-pointer" href="#home">Início</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#about">Sobre</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#skills">Habilidades</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#certifications">Certificações</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#projects">Projetos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#contact">Contato</a>
+<div class="flex items-center gap-4 ml-4">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors" title="Alternar Tema">
+<span class="material-symbols-outlined text-on-surface-variant">light_mode</span>
+</button>
+<a class="px-md py-xs bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:bg-primary-container transition-all active:scale-95" href="#">Currículo</a>
+</div>
+</div>
+<button class="md:hidden p-xs text-on-surface"><span class="material-symbols-outlined">menu</span></button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-section hero-gradient px-lg" id="home">
+<div class="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-xl items-center grid-cols-1">
+<div class="order-2 md:order-1 space-y-md">
+<div class="inline-flex items-center gap-2 px-sm py-xs bg-secondary-fixed text-on-secondary-fixed rounded-full font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Disponível para PJ e Freelance
+                </div>
+<h1 class="font-display text-display text-on-surface max-w-lg">
+                    Anna Gabriela Monteiro — <span class="text-primary">Desenvolvedora Front-End / Full Stack</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Último semestre em Ciência da Computação | Transformando conceitos acadêmicos em soluções reais e escaláveis.
+                </p>
+<div class="flex flex-wrap gap-md pt-xs">
+<a class="px-lg py-md bg-primary text-on-primary rounded-xl font-headline-md text-headline-md flex items-center gap-2 hover:shadow-lg transition-all active:scale-95" href="#projects">
+                        Ver Projetos
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="px-lg py-md border-2 border-outline-variant text-on-surface-variant rounded-xl font-headline-md text-headline-md hover:border-primary hover:text-primary transition-all active:scale-95" href="#contact">
+                        Contato
+                    </a>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center">
+<div class="relative w-64 h-64 md:w-96 md:h-96">
+<div class="absolute inset-0 bg-primary-fixed rounded-full rotate-6 scale-105 opacity-50"></div>
+<div class="absolute inset-0 bg-surface-variant rounded-full -rotate-3"></div>
+<img alt="Anna Gabriela Monteiro - Software Engineer" class="relative z-10 w-full h-full object-cover rounded-full border-4 border-white shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwyHSRzXlZi91HAoTxjJ1iM2dfwauMwxZ7Lw8rRRu4k2-gWBH7JqjsBa6vw4yyVuXIG2tE3FKN6qQ6rx_jFVA0tkC3bcv2kv8EiqwCiFvELgyfHCJ2FSa0UZ6CxJ2oRy6AyqtBlj-5wjULkAMsDpfFDKlWATVy1cZx-jK8jsJx4aR0gPUwnU9AV4daI71PulLCA1aJbPi9OWw74Ir6QRMXKqbbl-exFaeZDqz4uiGvoP1xG9QPwNZbjLdAZXKU-rGbieyCxjjCr1A"/>
+<div class="absolute bottom-4 right-4 z-20 bg-white p-sm rounded-xl shadow-lg border border-outline-variant flex items-center gap-2 animate-bounce">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-label-md text-label-md">Computer Science Student</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-section bg-surface-container-lowest" id="about">
+<div class="max-w-[1200px] mx-auto px-lg">
+<div class="grid md:grid-cols-12 gap-gutter items-start grid-cols-1">
+<div class="md:col-span-5 space-y-md sticky top-24">
+<h2 class="font-display text-display text-primary">Trajetória Acadêmica</h2>
+<div class="w-16 h-1 bg-primary rounded-full"></div>
+</div>
+<div class="md:col-span-7 space-y-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Como estudante do último ano de Ciência da Computação, minha evolução é pautada por uma base sólida em algoritmos, arquitetura de software e sistemas distribuídos. Mais do que aprender linguagens, foco em entender os fundamentos que tornam uma aplicação performática e segura.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Ao longo da graduação, participei de maratonas de programação e projetos de extensão que me ensinaram a colaborar em ambientes ágeis. Atualmente, busco aplicar esse rigor acadêmico em soluções de mercado, unindo o melhor da teoria com as ferramentas mais modernas do ecossistema Web.
+                    </p>
+<div class="grid grid-cols-2 gap-md pt-md">
+<div class="p-md bg-background border border-outline-variant rounded-xl">
+<h4 class="font-headline-md text-headline-md text-primary">Finalista</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ciência da Computação</p>
+</div>
+<div class="p-md bg-background border border-outline-variant rounded-xl">
+<h4 class="font-headline-md text-headline-md text-primary">15+</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Projetos Acadêmicos</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technologies Section -->
+<section class="py-section bg-background" id="skills">
+<div class="max-w-[1200px] mx-auto px-lg">
+<div class="text-center mb-xl">
+<h2 class="font-display text-display text-on-surface">Minha Stack</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Fundamentos sólidos e tecnologias modernas</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter grid-cols-1">
+<!-- Front-end -->
+<div class="p-lg bg-white border border-outline-variant rounded-xl hover:border-primary transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-lg mb-md group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white">layers</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">Interface &amp; UX</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">React / Next.js</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">TypeScript</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Tailwind CSS</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Zustand</span>
+</div>
+</div>
+<!-- Back-end -->
+<div class="p-lg bg-white border border-outline-variant rounded-xl hover:border-primary transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-lg mb-md group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white">storage</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">Sistemas &amp; API</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Node.js / NestJS</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">PostgreSQL / SQL</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Prisma ORM</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">RESTful APIs</span>
+</div>
+</div>
+<!-- CS Fundamentals -->
+<div class="p-lg bg-white border border-outline-variant rounded-xl hover:border-primary transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-lg mb-md group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white">computer</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">Fundamentos CS</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Estruturas de Dados</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Arquitetura de Soft.</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Git &amp; Linux</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full border border-outline-variant">Clean Code</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-section bg-surface-container-lowest" id="certifications"><div class="max-w-[1200px] mx-auto px-lg"><div class="text-center mb-xl"><h2 class="font-display text-display text-on-surface">Cursos &amp; Certificações</h2><p class="font-body-md text-body-md text-on-surface-variant mt-xs">Aprimoramento contínuo e validação de competências</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md"><div class="p-md bg-white border border-outline-variant rounded-xl hover:border-primary transition-all group"><div class="w-10 h-10 bg-secondary-fixed flex items-center justify-center rounded-lg mb-sm group-hover:bg-primary transition-colors"><span class="material-symbols-outlined text-primary group-hover:text-white">workspace_premium</span></div><h4 class="font-headline-md text-headline-md mb-xs">Formação Front-end Expert</h4><p class="font-body-md text-body-md text-on-surface-variant">Alura</p><p class="font-label-sm text-label-sm text-primary mt-xs">2023</p></div><div class="p-md bg-white border border-outline-variant rounded-xl hover:border-primary transition-all group"><div class="w-10 h-10 bg-secondary-fixed flex items-center justify-center rounded-lg mb-sm group-hover:bg-primary transition-colors"><span class="material-symbols-outlined text-primary group-hover:text-white">workspace_premium</span></div><h4 class="font-headline-md text-headline-md mb-xs">React &amp; Next.js Professional</h4><p class="font-body-md text-body-md text-on-surface-variant">Udemy</p><p class="font-label-sm text-label-sm text-primary mt-xs">2024</p></div><div class="p-md bg-white border border-outline-variant rounded-xl hover:border-primary transition-all group"><div class="w-10 h-10 bg-secondary-fixed flex items-center justify-center rounded-lg mb-sm group-hover:bg-primary transition-colors"><span class="material-symbols-outlined text-primary group-hover:text-white">workspace_premium</span></div><h4 class="font-headline-md text-headline-md mb-xs">Algoritmos e Estruturas de Dados</h4><p class="font-body-md text-body-md text-on-surface-variant">Coursera / Google</p><p class="font-label-sm text-label-sm text-primary mt-xs">2023</p></div><div class="p-md bg-white border border-outline-variant rounded-xl hover:border-primary transition-all group"><div class="w-10 h-10 bg-secondary-fixed flex items-center justify-center rounded-lg mb-sm group-hover:bg-primary transition-colors"><span class="material-symbols-outlined text-primary group-hover:text-white">workspace_premium</span></div><h4 class="font-headline-md text-headline-md mb-xs">UI/UX Design Fundamentals</h4><p class="font-body-md text-body-md text-on-surface-variant">Digital House</p><p class="font-label-sm text-label-sm text-primary mt-xs">2022</p></div></div></div></section>
+<!-- Projects Section -->
+<section class="py-section bg-surface-container-low" id="projects">
+<div class="max-w-[1200px] mx-auto px-lg">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-display text-display text-on-surface">Projetos &amp; Portfólio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">De experimentos acadêmicos a soluções freelances</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="#">
+                    Repositórios Completos
+                    <span class="material-symbols-outlined">launch</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Project 1 - Academic -->
+<div class="md:col-span-8 group relative overflow-hidden bg-white rounded-xl border border-outline-variant transition-all hover:shadow-xl">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="SaaS Dashboard Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3nevtl34TEqYADikyEKtwr2fMe1BMmVSdFNrKrnaVbFFOfXYfgwWMq1BV5EfrSoHRZME6LRawNamU6yOuB94YpkvKcXniulYI0gUbCq22McNVVNGjVZ3KyEs2BwBlpCuNEFccLLzkvn-oiih0U0DFsRrOJv2ao0c7C5iZwCpx5f-HRafcN_YcTkqIQwn1Q2VvqimPKan7qTTTnq2iDTss7ipqTdE4GxNOULYtVX3rK3X1XnDvYGLRLZRqd1NAmjlFZBscbahnGU4"/>
+</div>
+<div class="p-lg">
+<div class="flex gap-2 mb-sm">
+<span class="px-sm py-base bg-secondary-fixed text-primary font-label-sm text-label-sm rounded-full">TCC / Graduação</span>
+<span class="px-sm py-base bg-surface-container text-on-surface-variant font-label-sm text-label-sm rounded-full">Next.js + Prisma</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-xs">Plataforma de Gestão Acadêmica</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md max-w-xl">
+                            Sistema full stack desenvolvido para o projeto final de curso, permitindo a gestão de horas complementares e monitoramento de desempenho estudantil com dashboards em tempo real.
+                        </p>
+<div class="flex gap-md">
+<button class="flex items-center gap-2 font-label-md text-label-md text-primary hover:opacity-80">
+<span class="material-symbols-outlined">visibility</span> Demo Online
+                            </button>
+<button class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">terminal</span> Ver Código
+                            </button>
+</div>
+</div>
+</div>
+<!-- Project 2 - Personal/Freelance -->
+<div class="md:col-span-4 flex flex-col bg-white rounded-xl border border-outline-variant overflow-hidden hover:border-primary transition-all group">
+<div class="h-48 overflow-hidden">
+<img alt="Mobile Marketplace UI" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD95fCdgT07CdznVtbQZK1roXHX2tDvUvj2pcT7p5upTtOvSg77qGS66xjxmi8MMa1N0sGH3z-aBXUhMW-CIpnzQ_nsD5nbCgT82XCflIkxyP5G73WDEK-wPzhAgE59yM68Z513k_E9emlx3Qcnb2XbHcctqj_lgsZdKFU8ZY6doh0ClGN60EP8WwcyFOXx0T8ZzJLPvn2Hx9s-Lshwdpp7nfigPHBG2UhPOBGvPLX2uxjoUFT9bDfBcp_azxFMHWQ9dhZJVZb-PMY"/>
+</div>
+<div class="p-lg flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md mb-xs">EcoMarket App</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1 mb-md">
+                            MVP de marketplace sustentável. Focado em UX intuitiva e performance mobile.
+                        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full">React Native</span>
+<span class="px-sm py-base bg-surface-container-low text-primary font-label-sm text-label-sm rounded-full">Firebase</span>
+</div>
+<button class="w-full py-sm border border-outline-variant rounded-xl font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors">Detalhes</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section bg-surface-container-lowest" id="contact">
+<div class="max-w-[1200px] mx-auto px-lg">
+<div class="grid md:grid-cols-2 gap-xl grid-cols-1">
+<div class="space-y-md">
+<h2 class="font-display text-display text-on-surface">Vamos construir algo juntos?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Estou aberta a oportunidades de estágio, júnior, PJ ou parcerias freelance. Vamos conversar sobre o seu projeto!
+                    </p>
+<div class="space-y-md pt-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-secondary-fixed rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<p class="font-label-md text-label-md">anna.gabriela@dev.com</p>
+</div>
+<!-- WhatsApp Button -->
+<a class="inline-flex items-center gap-md p-md bg-[#25D366]/10 text-[#075E54] rounded-xl border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all w-fit" href="https://wa.me/5500000000000" target="_blank">
+<div class="w-10 h-10 bg-[#25D366] text-white rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">WhatsApp Direto</span>
+<span class="text-sm opacity-80">Resposta rápida</span>
+</div>
+<span class="material-symbols-outlined ml-2 text-sm">open_in_new</span>
+</a>
+<div class="flex gap-md pt-lg">
+<a class="p-sm bg-background border border-outline-variant rounded-xl hover:text-primary transition-colors" href="https://linkedin.com">
+<span class="material-symbols-outlined">link</span>
+</a>
+<a class="p-sm bg-background border border-outline-variant rounded-xl hover:text-primary transition-colors" href="https://github.com">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm">
+<form class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Nome completo</label>
+<input class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Seu nome" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">E-mail corporativo</label>
+<input class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="seu@email.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface">Sua necessidade</label>
+<textarea class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Como posso ajudar seu time ou projeto?" rows="4"></textarea>
+</div>
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-headline-md text-headline-md hover:bg-primary-container transition-all active:scale-[0.98]" type="submit">
+                            Enviar Mensagem
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full mt-xl bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-lg py-md text-center">
+<div class="flex flex-col gap-1 mb-md md:mb-0">
+<span class="font-headline-md text-headline-md text-primary font-bold">AnnaGabriela.dev</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 • Desenvolvedora Software</p>
+</div>
+<div class="flex gap-lg items-center">
+<a class="font-label-md text-label-md text-primary hover:text-on-secondary-container transition-all font-bold" href="#">LinkedIn</a>
+<a class="font-label-md text-label-md text-primary hover:text-on-secondary-container transition-all font-bold" href="#">GitHub</a>
+<a class="font-label-md text-label-md text-primary hover:text-on-secondary-container transition-all font-bold" href="#">E-mail</a>
+</div>
+</div>
+</footer>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
+
+    document.querySelector('#home').classList.remove('opacity-0', 'translate-y-10');
+    document.querySelector('#home').classList.add('opacity-100', 'translate-y-0');
+</script>
+</body></html>
